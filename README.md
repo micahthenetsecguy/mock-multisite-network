@@ -7,6 +7,10 @@ This repository contains the logical design multi-site corporate network infrast
 
 I went with a pretty standard setup for this lab. I made this a global build because I work globally for my current job. 
 
+**Cisco 3560 Multi-Layer Switches (Core)**: I decided to use these because (in this instance) layer 3 switches are superior to layer 2 switches. They have built-in "brains" that allow me to handle all the traffic moving between my internal VLANs right on the switches at lightning speed. It also lets me run HSRP, which is just a fancy way of saying that if one core switch dies, the other one instantly takes over without users losing internet. It just adds some redundancy to ease the minds of the plant/site/office etc. <br><br>
+**Cisco 2911 Router (Edge)**:  Since the 3560 switches are doing all the heavy lifting for the internal traffic, this router can just sit at the door and do edge work. I use it strictly to talk to the branch office via OSPF, translate internal IPs to the internet using NAT, and block bad traffic using ACL security rules.<br><br>
+**Cisco 2911 Router (Branch Edge)**: The one is just the gatekeeper for the remote office. It handles the local branch users and routes their traffic back to Headquarters over the WAN link.
+
 ## Cost-Benefit Analysis:
 I feel like this is worth mentioning. I chose the ISR 4321s for many reasons, which I have expanded upon below, but it does come with a much higher initial expenditure than the 2911s. 
 
@@ -15,10 +19,6 @@ The 2911s have already reached their EOL, and it no longer receives security pat
 Below is the per unit price difference
 <img width="1535" height="659" alt="Screenshot 2026-07-05 183820" src="https://github.com/user-attachments/assets/86285000-bbd8-46fa-b97c-40025db65ecf" />
 <img width="1211" height="775" alt="Screenshot 2026-07-05 183809" src="https://github.com/user-attachments/assets/e0089689-5576-4d21-b270-a51d5d46dd43" />
-
-**Cisco 3560 Multi-Layer Switches (Core)**: I decided to use these because (in this instance) layer 3 switches are superior to layer 2 switches. They have built-in "brains" that allow me to handle all the traffic moving between my internal VLANs right on the switches at lightning speed. It also lets me run HSRP, which is just a fancy way of saying that if one core switch dies, the other one instantly takes over without users losing internet. It just adds some redundancy to ease the minds of the plant/site/office etc. <br><br>
-**Cisco 2911 Router (Edge)**:  Since the 3560 switches are doing all the heavy lifting for the internal traffic, this router can just sit at the door and do edge work. I use it strictly to talk to the branch office via OSPF, translate internal IPs to the internet using NAT, and block bad traffic using ACL security rules.<br><br>
-**Cisco 2911 Router (Branch Edge)**: The one is just the gatekeeper for the remote office. It handles the local branch users and routes their traffic back to Headquarters over the WAN link.
 
 ## Resources I used:
  
