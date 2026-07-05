@@ -16,6 +16,7 @@ I went with a pretty standard setup for this lab.
 https://www.skendric.com/seminar/
 
 ## 30-Day Build Timeline
+(last edited July 5th 2026)
 This is how I structured the build. I could have done it quicker but I wanted to do my best work and kinda take my time (because there is not time limit or deadline)
 
 ### Week 1: Layer 2 Infrastructure & STP Optimization
