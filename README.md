@@ -16,6 +16,8 @@ Seoul - Branch
 **Cisco ISR 4431**: I was going to use the 4321 routers for all offices, but after doing some research, I realized that they would choke as the spine for the network. They only max out around 50 to 100 Mbps, which is totally fine for a single branch office with a few users, but if I tried to force all four international offices in New York, London, Hyderabad, and Seoul to tunnel back into one at the Austin HQ, it would become a massive bottleneck. Plus, once I start adding the zone-based firewall rules, NAT configurations, and all the OSPF routing processes onto them, the CPU would just lock up. So, to keep it realistic, I decided to upgrade the Austin HQ routers to the ISR 4431 model so the core actually has enough bandwidth to handle the global traffic.<br><br>
 **Cisco Catalyst 3650-24PS Multi-Layer Switches**: I decided to use these because (in this instance) layer 3 switches are superior to layer 2 switches. They have built-in "brains" that allow me to handle all the traffic moving between my internal VLANs right on the switches at lightning speed. It also lets me run HSRP, which is just a fancy way of saying that if one core switch dies, the other one instantly takes over without users losing internet. It just adds some redundancy to ease the minds of the plant/site/office etc.
 
+## Design Overview
+
 ## Resources I used:
  
 https://www.skendric.com/seminar/
