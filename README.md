@@ -10,7 +10,7 @@ London - Branch
 Hyderabad - Branch
 Seoul - Branch
 
-## Let's talk about the components that I used and my reasoning(apologies, it is a lot):
+## Let's talk about the components that I used and my reasoning (apologies, it is a lot):
 
 Cisco ISR 4321 Edge Routers: To me these routers work for branch offices. Of course, this selection is pretty dependent on the traffic
 Cisco ISR 4431: I was going to use the 4321 routers for all offices, but after doing some research, I realized that they would choke as the spine for the network. They only max out around 50 to 100 Mbps, which is totally fine for a single branch office with a few users, but if I tried to force all four international offices in New York, London, Hyderabad, and Seoul to tunnel back into one at the Austin HQ, it would become a massive bottleneck. Plus, once I start adding the zone-based firewall rules, NAT configurations, and all the OSPF routing processes onto them, the CPU would just lock up. So, to keep it realistic, I decided to upgrade the Austin HQ routers to the ISR 4431 model so the core actually has enough bandwidth to handle the global traffic.
