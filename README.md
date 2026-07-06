@@ -30,12 +30,12 @@ I was running kinda a mesh topology. At first, I planned for London to feed into
 (last edited July 5th 2026)<br>
 This is how I structured the build. I could have done it quicker but I wanted to do my best work and kinda take my time (because there is not time limit or deadline)
 
-## Resources I used:
- 
-https://www.skendric.com/seminar/
 
 ### Week 1: Layer 2 Infrastructure & STP Optimization
 **Day 1: Topology Mapping & Physical Placement**
   - Mapped out physical devices and connections in Cisco Packet Tracer.
   - Establish redundancy throughout the core to prevent downtime in the event a cable gets unplugged, ports fail, cables break etc.
   - The infrastrucure is free from SPOF to maintain uptime.
+
+## Resources I used:  
+https://www.skendric.com/seminar/
